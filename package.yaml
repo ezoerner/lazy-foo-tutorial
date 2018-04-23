@@ -4,19 +4,12 @@ github:              "ezoerner/lazy-foo"
 license:             BSD3
 author:              "Eric Zoerner"
 maintainer:          "eric.zoerner@gmail.com"
-copyright:           "Copyright: (c) 2017 Eric Zoerner"
+copyright:           "Copyright: (c) 2018 Eric Zoerner"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
 description:         Please see the README on Github at <https://github.com/ezoerner/lazy-foo#readme>
 
 dependencies:
@@ -26,13 +19,14 @@ library:
   source-dirs: src
 
 executables:
-  lazy-foo-exe:
-    main:                Main.hs
+  lesson01:
+    main:                Lesson01.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -main-is Lesson01
     dependencies:
     - lazy-foo
     - sdl2
