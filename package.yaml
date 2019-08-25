@@ -10,10 +10,21 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
+data-dir: assets
+
+data-files:
+- hello_world.bmp
+
+ghc-options: -Wall -Werror -Wno-type-defaults
+
 description:         Please see the README on Github at <https://github.com/ezoerner/lazy-foo#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+- linear
+- sdl2
+- text
+- sdl2-image
 
 library:
   source-dirs: src
@@ -23,21 +34,37 @@ executables:
     main:                Lesson01.hs
     source-dirs:         app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -main-is Lesson01
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson01
     dependencies:
     - lazy-foo
-    - sdl2
+
+  lesson01p:
+    main:                Lesson01Palf.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson01Palf
+    dependencies:
+    - lazy-foo
+
+  lesson02:
+    main:                Lesson02.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson02
+    dependencies:
+    - lazy-foo
+
+  main:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Main
+    dependencies:
+    - lazy-foo
 
 tests:
   lazy-foo-test:
     main:                Spec.hs
     source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
     dependencies:
     - lazy-foo
