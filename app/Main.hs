@@ -1,4 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
+
+-- this is the example application from
+-- https://hackage.haskell.org/package/sdl2-2.5.0.0/docs/SDL.html
 module Main where
 
 import SDL

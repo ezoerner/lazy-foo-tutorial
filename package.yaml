@@ -14,6 +14,12 @@ data-dir: assets
 
 data-files:
 - hello_world.bmp
+- x.bmp
+- press.bmp
+- up.bmp
+- down.bmp
+- left.bmp
+- right.bmp
 
 ghc-options: -Wall -Werror -Wno-type-defaults
 
@@ -25,6 +31,7 @@ dependencies:
 - sdl2
 - text
 - sdl2-image
+- extra
 
 library:
   source-dirs: src
@@ -54,15 +61,39 @@ executables:
     dependencies:
     - lazy-foo
 
+  lesson02p:
+    main:                Lesson02Palf.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson02Palf
+    dependencies:
+    - lazy-foo
+
   main:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
-    - -threaded -rtsopts -with-rtsopts=-N -main-is Main
+    - -threaded -rtsopts -with-rtsopts=-N
     dependencies:
     - lazy-foo
 
-tests:
+  lesson03:
+    main:                Lesson03.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson03
+    dependencies:
+    - lazy-foo
+
+  lesson04:
+    main:                Lesson04.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson04
+    dependencies:
+    - lazy-foo
+
+    tests:
   lazy-foo-test:
     main:                Spec.hs
     source-dirs:         test

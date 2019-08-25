@@ -9,6 +9,7 @@ import qualified SDL
 screenWidth, screenHeight :: CInt
 (screenWidth, screenHeight) = (640, 480)
 
+-- examples from https://github.com/haskell-game/sdl2
 main :: IO ()
 main = do
   SDL.initialize [SDL.InitVideo]
