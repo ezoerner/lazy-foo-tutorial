@@ -20,6 +20,9 @@ data-files:
 - down.bmp
 - left.bmp
 - right.bmp
+- stretch.bmp
+- loaded.png
+- texture.png
 
 ghc-options: -Wall -Werror -Wno-type-defaults
 
@@ -93,7 +96,23 @@ executables:
     dependencies:
     - lazy-foo
 
-    tests:
+  lesson05:
+    main:                Lesson05.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson05
+    dependencies:
+    - lazy-foo
+
+  lesson07:
+    main:                Lesson07.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded -rtsopts -with-rtsopts=-N -main-is Lesson07
+    dependencies:
+    - lazy-foo
+
+tests:
   lazy-foo-test:
     main:                Spec.hs
     source-dirs:         test
